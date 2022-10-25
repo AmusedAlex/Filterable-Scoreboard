@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 2 Day 1</title>
+
+    <!-- Normalize.CSS needs to be added first to avoid weird browser defaults -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- After the own style.css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- We wat to visualize a score board
+    Imagine you have different enities which are competing with each other.
+    Each Player has a Score and we want to visualize a scoreboard i.e. 
+    a list of the current scores sortable by alphabet or score-->
+    <div id="container">
+      <h1>Scoreboard</h1>
+
+      <ol id="scoreboard-list">
+        <!-- Therese elements, the scores will be displayed dynamically 
+        using JS -->
+        <!-- We want to be objects like this:
+        
+        <li class="scoreboard-line">
+          <span class="item-name">Nico</span
+          ><span class="item-score"> 100</span>
+        </li>
+        <li class="scoreboard-line">
+          <span class="item-name">Alex</span><span class="item-score"> 90</span>
+        </li>
+        <li class="scoreboard-line">
+          <span class="item-name">Max</span><span class="item-score"> 80</span>
+        </li>
+        <li class="scoreboard-line">
+          <span class="item-name">Meikel</span
+          ><span class="item-score"> 70</span>
+        </li> -->
+      </ol>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
