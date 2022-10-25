@@ -33,7 +33,7 @@ function sortScores(scoreObject1, scoreObject2) {
 }
 // This is a function, so the name shell be a VERB
 function visualizeScores() {
-  //   Here we add sorting the scores array using as sorting function
+  // Here we add sorting the scores array using as sorting function
   // the function sortScores as defined above
   let sortedScores = scores.sort(sortScores);
 

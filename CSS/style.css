@@ -4,12 +4,18 @@
   padding-inline: 20px;
   text-align: center;
 }
-
-#container ol#scoreboard-list {
-  padding-left: 0px;
+/* is:(1) has a higher specificity as :where (0) */
+:is(ul, li) {
+  list-style: square;
 }
 
-#container li.scoreboard-line {
+:is(#container ol#scoreboard-list, #container ul#how-to-read) {
+  list-style: none;
+  padding-left: 0px;
+}
+:is(#container ol#scoreboard-list li.scoreboard-line, #container
+    ul#how-to-read
+    .li-how-to-line) {
   text-align: left;
   border: 1px solid grey;
   border-radius: 5px;
@@ -22,10 +28,16 @@
   justify-content: space-between;
 }
 
-.good-score {
+.scoreboard-line.good-score,
+.li-how-to-line.good-score {
   background-color: lime;
 }
 
-.bad-score {
+.scoreboard-line.bad-score,
+.li-how-to-line.bad-score {
   background-color: tomato;
+}
+
+:where(.scoreboard-line > span.item-name) {
+  font-weight: bold;
 }
