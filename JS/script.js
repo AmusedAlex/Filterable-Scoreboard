@@ -21,7 +21,7 @@ let scores = [
   { name: "Victor", score: 10 },
 ];
 
-function sortScores(scoreObject1, scoreObject2) {
+function sortScoresByScore(scoreObject1, scoreObject2) {
   // This is a function that takes 2 numbers
   // Returns -1 if the first number is < the second one
   // Returns +1 if the first number is >= the second one
@@ -31,11 +31,29 @@ function sortScores(scoreObject1, scoreObject2) {
     return +1;
   }
 }
+
+function sortScoresByName(scoreObject1, scoreObject2) {
+  // This is a function that takes 2 numbers
+  // Returns -1 if the first number is < the second one
+  // Returns +1 if the first number is >= the second one
+  if (scoreObject1.name < scoreObject2.name) {
+    return -1;
+  } else {
+    return +1;
+  }
+}
+
 // This is a function, so the name shell be a VERB
-function visualizeScores() {
+function visualizeScores(sorting) {
   // Here we add sorting the scores array using as sorting function
   // the function sortScores as defined above
-  let sortedScores = scores.sort(sortScores);
+  let sortedScores = scores;
+
+  if (sorting === "name") {
+    sortedScores = scores.sort(sortScoresByName);
+  } else if (sorting === "score") {
+    sortedScores = scores.sort(sortScoresByScore);
+  }
 
   // Also we could write this like that:
   //   let sortedScores = scores.sort((scoreObject1, scoreObject2) => {
@@ -46,6 +64,9 @@ function visualizeScores() {
   //     }
   //   });
 
+  // 0) We clean the ordered list
+  let ol = document.getElementById("scoreboard-list");
+  ol.innerHTML = "";
   // 1) For each element insde the array of scores
   for (let scoreObject of scores) {
     let li = document.createElement("li");
@@ -68,7 +89,6 @@ function visualizeScores() {
       li.classList.add("bad-score");
     }
 
-    let ol = document.getElementById("scoreboard-list");
     ol.appendChild(li);
   }
   // 2.0) Create li, span name, span score
