@@ -41,3 +41,31 @@
 :where(.scoreboard-line > span.item-name) {
   font-weight: bold;
 }
+a[href^="http"] {
+  color: violet;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  background-color: aquamarine;
+}
+
+a:last-of-type {
+  color: blue;
+}
+
+li.scoreboard-line::after {
+  visibility: hidden;
+  transition-property: visibility;
+  transition-delay: 3s;
+}
+li.scoreboard-line:hover::after {
+  visibility: visible;
+  content: "Some usefull information about this score line.";
+  position: absolute;
+  right: 25px;
+  border: 1px solid grey;
+  background-color: lightgrey;
+  border-radius: 3px;
+}
